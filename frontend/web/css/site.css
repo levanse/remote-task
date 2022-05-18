@@ -1,3 +1,7 @@
+nav > .container {
+    padding-left: 55px;
+}
+
 main > .container {
     padding: 70px 15px 20px;
 }
@@ -87,4 +91,17 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+
+#left {
+    width: 25%;
+}
+
+#right {
+    width: 75%;
+}
+
+.dropdown-item-text {
+    font-weight: 700;
+    font-size: xx-large;
 }
