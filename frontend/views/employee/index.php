@@ -9,6 +9,8 @@ $this->title = 'Tabela Pracowników';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<h1><?= Html::encode($this->title) ?></h1>
+
 <div class="employee-index">
     <div class="row">
         <div class="col-3">
@@ -23,7 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <table class="table table-hover">
     <thead>
     <tr class="title">
-        <th scope="col">#</th>
         <th scope="col">Lp</th>
         <th scope="col">Imię</th>
         <th scope="col">Nazwisko</th>
@@ -35,7 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <tbody>
     <tr>
         <th scope="row">1</th>
-        <td>111</td>
         <td>Mark</td>
         <td>Otto</td>
         <td>Programista</td>
@@ -44,7 +44,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </tr>
     <tr>
         <th scope="row">2</th>
-        <td>222</td>
         <td>Jacob</td>
         <td>Thornton</td>
         <td>Kierowca</td>
@@ -53,7 +52,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </tr>
     <tr>
         <th scope="row">3</th>
-        <td>333</td>
         <td>Larry</td>
         <td>Adamson</td>
         <td>Budowniczy</td>
@@ -62,7 +60,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </tr>
     <tr>
         <th scope="row">4</th>
-        <td>444</td>
         <td>Sharon</td>
         <td>Smith</td>
         <td>Piekarz</td>
@@ -71,7 +68,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </tr>
     <tr>
         <th scope="row">5</th>
-        <td>555</td>
         <td>David</td>
         <td>Brown</td>
         <td>Sprzedawca</td>
