@@ -1,6 +1,7 @@
 <?php
 
 /** @var \yii\web\View $this */
+
 /** @var string $content */
 
 use common\widgets\Alert;
@@ -11,65 +12,65 @@ use yii\bootstrap4\NavBar;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" class="h-100">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?php $this->registerCsrfMetaTags() ?>
-    <title>Zadanie zdalne e-MSI</title>
-    <?php $this->head() ?>
-</head>
-<body class="d-flex flex-column h-100">
-<?php $this->beginBody() ?>
+    <!DOCTYPE html>
+    <html lang="<?= Yii::$app->language ?>" class="h-100">
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <?php $this->registerCsrfMetaTags() ?>
+        <title>Zadanie zdalne e-MSI</title>
+        <?php $this->head() ?>
+    </head>
 
-<header>
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'e-MSI',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
-        ],
-    ]);
-    NavBar::end();
-    ?>
-</header>
+    <body class="d-flex flex-column h-100">
+    <?php $this->beginBody() ?>
 
-<main role="main" class="flex-shrink-0">
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
+    <header>
+        <?php
+        NavBar::begin([
+            'brandLabel' => 'e-MSI',
+            'brandUrl' => Yii::$app->homeUrl,
+            'options' => [
+                'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+            ],
+        ]);
+        NavBar::end();
+        ?>
+    </header>
+
+    <main role="main" class="flex-shrink-0">
         <div class="container">
-            <div class="row">
-                <div id="left" class="col-3">
-                    <div id="dropdown-menu">
-                        <span class="dropdown-item-text">Menu</span>
-                        <a class="dropdown-item" href="/contractor/">Różne kontrolki HTML</a>
-                        <a class="dropdown-item" href="/employee/">Tabela Pracowników</a>
-                        <a class="dropdown-item" href="#">Tabela Faktur VAT</a>
-                        <a class="dropdown-item" href="#">Tabela Delegacji BD</a>
-                        <a class="dropdown-item" href="#">Dane Kontrahentów</a>
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+            <div class="container">
+                <div class="row">
+                    <div id="left" class="col-3">
+                        <div id="dropdown-menu">
+                            <span class="dropdown-item-text">Menu</span>
+                            <a class="dropdown-item" href="/contractor/">Różne kontrolki HTML</a>
+                            <a class="dropdown-item" href="/employee/">Tabela Pracowników</a>
+                            <a class="dropdown-item" href="/invoice/">Tabela Faktur VAT</a>
+                            <a class="dropdown-item" href="/delegation/">Tabela Delegacji BD</a>
+                            <a class="dropdown-item" href="#">Dane Kontrahentów</a>
+                        </div>
                     </div>
-                </div>
-                <div id="right" class="col-9">
-                    <?= $content ?>
+                    <div id="right" class="col-9">
+                        <?= $content ?>
+                    </div>
                 </div>
             </div>
         </div>
+    </main>
 
-    </div>
-</main>
+    <footer class="footer mt-auto py-3 text-muted">
+        <div class="container">
+            <p class="float-left">&copy; e-MSI <?= date('Y') ?></p>
+        </div>
+    </footer>
 
-<footer class="footer mt-auto py-3 text-muted">
-    <div class="container">
-        <p class="float-left">&copy; e-MSI <?= date('Y') ?></p>
-    </div>
-</footer>
-
-<?php $this->endBody() ?>
-</body>
-</html>
+    <?php $this->endBody() ?>
+    </body>
+    </html>
 <?php $this->endPage();
