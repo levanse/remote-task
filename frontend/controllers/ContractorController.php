@@ -3,7 +3,6 @@
 namespace frontend\controllers;
 
 use common\models\Contractor;
-use common\models\search\ContractorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

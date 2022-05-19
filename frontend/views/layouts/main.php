@@ -48,7 +48,7 @@ AppAsset::register($this);
                     <div id="dropdown-menu">
                         <span class="dropdown-item-text">Menu</span>
                         <a class="dropdown-item" href="/contractor/">Różne kontrolki HTML</a>
-                        <a class="dropdown-item" href="#">Tabela Pracowników</a>
+                        <a class="dropdown-item" href="/employee/">Tabela Pracowników</a>
                         <a class="dropdown-item" href="#">Tabela Faktur VAT</a>
                         <a class="dropdown-item" href="#">Tabela Delegacji BD</a>
                         <a class="dropdown-item" href="#">Dane Kontrahentów</a>

@@ -5,13 +5,13 @@ namespace common\helpers;
 class Constant
 {
     public static $colors = [
-        'zielony',
-        'niebieski',
-        'szary',
-        'turkusowy',
-        'granatowy',
-        'czerwony',
-        'biały'
+        'green' => 'zielony',
+        'blue' => 'niebieski',
+        'gray' => 'szary',
+        'turquoise' => 'turkusowy',
+        'navy' => 'granatowy',
+        'red' => 'czerwony',
+        'white' => 'biały'
     ];
 
     public static $vat = [
