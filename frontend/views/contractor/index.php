@@ -1,50 +1,54 @@
 <?php
 
+use common\helpers\Constant;
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\grid\ActionColumn;
-use yii\grid\GridView;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\search\ContractorSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $model common\models\Contractor */
 
-$this->title = 'Contractors';
+$this->title = 'Różne kontrolki HTML';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="contractor-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Contractor', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <?php $form = ActiveForm::begin(); ?>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?= $form->field($model, 'nip')->textInput() ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <?= $form->field($model, 'region')->textInput() ?>
 
-            'id',
-            'nip:ntext',
-            'region',
-            'name:ntext',
-            'date_creation',
-            //'street:ntext',
-            //'house_number:ntext',
-            //'apartment_number:ntext',
-            //'comments:ntext',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Contractor $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
-            ],
-        ],
-    ]); ?>
+    <?= $form->field($model, 'name')->textInput() ?>
 
+    <?= $form->field($model, 'date_creation')->textInput() ?>
+
+    <?= $form->field($model, 'street')->textInput() ?>
+
+    <?= $form->field($model, 'house_number')->textInput() ?>
+
+    <?= $form->field($model, 'apartment_number')->textInput() ?>
+
+    <?= $form->field($model, 'comments')->textInput() ?>
+
+    <?php ActiveForm::end(); ?>
+
+    <div class="row">
+        <div class="col-4">
+            <?= Html::dropDownList('id', '', Constant::$colors, ['prompt' => 'Wybierz kolor']) ?>
+        </div>
+        <div class="col-4">
+            <?= Html::dropDownList('id', '', Constant::$vat, ['prompt' => 'Wybierz VAT']) ?>
+        </div>
+        <div class="col-4">
+            <ol>
+                <li>Element</li>
+                <li>Element</li>
+                <li>Element</li>
+            </ol>
+        </div>
+    </div>
 
 </div>

@@ -48,12 +48,12 @@ class Contractor extends ActiveRecord
             'id' => 'ID',
             'nip' => 'Nip',
             'region' => 'Region',
-            'name' => 'Name',
-            'date_creation' => 'Date Creation',
-            'street' => 'Street',
-            'house_number' => 'House Number',
-            'apartment_number' => 'Apartment Number',
-            'comments' => 'Comments',
+            'name' => 'Nazwa',
+            'date_creation' => 'Date powstania',
+            'street' => 'Ulica',
+            'house_number' => 'Numer domu',
+            'apartment_number' => 'Numer mieszkania',
+            'comments' => 'Uwagi',
         ];
     }
 }

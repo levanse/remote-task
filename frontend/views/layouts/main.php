@@ -42,7 +42,24 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?>
+        <div class="container">
+            <div class="row">
+                <div id="left" class="col-3">
+                    <div id="dropdown-menu">
+                        <span class="dropdown-item-text">Menu</span>
+                        <a class="dropdown-item" href="/contractor/">Różne kontrolki HTML</a>
+                        <a class="dropdown-item" href="#">Tabela Pracowników</a>
+                        <a class="dropdown-item" href="#">Tabela Faktur VAT</a>
+                        <a class="dropdown-item" href="#">Tabela Delegacji BD</a>
+                        <a class="dropdown-item" href="#">Dane Kontrahentów</a>
+                    </div>
+                </div>
+                <div id="right" class="col-9">
+                    <?= $content ?>
+                </div>
+            </div>
+        </div>
+
     </div>
 </main>
 
