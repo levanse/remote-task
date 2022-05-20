@@ -49,7 +49,7 @@ AppAsset::register($this);
                     <div id="left" class="col-3">
                         <div id="dropdown-menu">
                             <span class="dropdown-item-text">Menu</span>
-                            <a class="dropdown-item" href="#">Różne kontrolki HTML</a>
+                            <a class="dropdown-item" href="/counterparty-data/">Różne kontrolki HTML</a>
                             <a class="dropdown-item" href="/employee/">Tabela Pracowników</a>
                             <a class="dropdown-item" href="/invoice/">Tabela Faktur VAT</a>
                             <a class="dropdown-item" href="/delegation/">Tabela Delegacji BD</a>
