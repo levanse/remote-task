@@ -17,8 +17,8 @@ class ContractorSearch extends Contractor
     public function rules()
     {
         return [
-            [['id', 'region'], 'integer'],
-            [['nip', 'name', 'date_creation', 'street', 'house_number', 'apartment_number', 'comments'], 'safe'],
+            [['id', 'vat', 'is_deleted'], 'integer'],
+            [['nip', 'region', 'name', 'street', 'house_number', 'apartment_number'], 'safe'],
         ];
     }
 
@@ -59,16 +59,16 @@ class ContractorSearch extends Contractor
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'region' => $this->region,
-            'date_creation' => $this->date_creation,
+            'vat' => $this->vat,
+            'is_deleted' => 0,
         ]);
 
         $query->andFilterWhere(['like', 'nip', $this->nip])
+            ->andFilterWhere(['like', 'region', $this->region])
             ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'street', $this->street])
             ->andFilterWhere(['like', 'house_number', $this->house_number])
-            ->andFilterWhere(['like', 'apartment_number', $this->apartment_number])
-            ->andFilterWhere(['like', 'comments', $this->comments]);
+            ->andFilterWhere(['like', 'apartment_number', $this->apartment_number]);
 
         return $dataProvider;
     }

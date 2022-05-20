@@ -12,21 +12,21 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nip')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'nip')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'region')->textInput() ?>
+    <?= $form->field($model, 'region')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'name')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date_creation')->textInput() ?>
+    <?= $form->field($model, 'street')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'street')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'house_number')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'house_number')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'apartment_number')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'apartment_number')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'vat')->checkbox() ?>
 
-    <?= $form->field($model, 'comments')->textarea(['rows' => 6]) ?>
+    <?php // $form->field($model, 'is_deleted')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

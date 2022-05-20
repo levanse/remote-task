@@ -8,14 +8,14 @@ use yii\db\ActiveRecord;
  * This is the model class for table "{{%contractor}}".
  *
  * @property int $id
- * @property string|null $nip
- * @property int|null $region
- * @property string|null $name nazwa
- * @property string|null $date_creation data powstania
- * @property string|null $street ulica
- * @property string|null $house_number numer domu
- * @property string|null $apartment_number numer mieszkania
- * @property string|null $comments uwagi
+ * @property string $nip
+ * @property string $region
+ * @property string $name nazwa
+ * @property string $street ulica
+ * @property string $house_number numer domu
+ * @property string $apartment_number numer mieszkania
+ * @property int|null $vat czy płatnik vat
+ * @property int|null $is_deleted
  */
 class Contractor extends ActiveRecord
 {
@@ -33,9 +33,9 @@ class Contractor extends ActiveRecord
     public function rules()
     {
         return [
-            [['nip', 'name', 'street', 'house_number', 'apartment_number', 'comments'], 'string'],
-            [['region'], 'integer'],
-            [['date_creation'], 'safe'],
+            [['nip', 'region', 'name', 'street', 'house_number', 'apartment_number'], 'required'],
+            [['vat', 'is_deleted'], 'integer'],
+            [['nip', 'region', 'name', 'street', 'house_number', 'apartment_number'], 'string', 'max' => 255],
         ];
     }
 
@@ -47,13 +47,13 @@ class Contractor extends ActiveRecord
         return [
             'id' => 'ID',
             'nip' => 'Nip',
-            'region' => 'Region',
+            'region' => 'Regon',
             'name' => 'Nazwa',
-            'date_creation' => 'Date powstania',
             'street' => 'Ulica',
             'house_number' => 'Numer domu',
             'apartment_number' => 'Numer mieszkania',
-            'comments' => 'Uwagi',
+            'vat' => 'Czy płatnik vat',
+            'is_deleted' => 'Is Deleted',
         ];
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
-use common\helpers\Constant;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Contractor */
+/* @var $searchModel common\models\search\ContractorSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Różne kontrolki HTML';
+$this->title = 'Dane Kontrahentów';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -15,40 +15,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?php $form = ActiveForm::begin(); ?>
+    <p>
+        <?= Html::a('Dodawanie kontrahenta', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
-    <?= $form->field($model, 'nip')->textInput() ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= $form->field($model, 'region')->textInput() ?>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'layout' => "{items}",
+        'columns' => [
 
-    <?= $form->field($model, 'name')->textInput() ?>
+            'nip',
+            'region',
+            'name',
+            'street',
+            'house_number',
+            'apartment_number',
+            'vat:boolean',
 
-    <?= $form->field($model, 'date_creation')->textInput() ?>
-
-    <?= $form->field($model, 'street')->textInput() ?>
-
-    <?= $form->field($model, 'house_number')->textInput() ?>
-
-    <?= $form->field($model, 'apartment_number')->textInput() ?>
-
-    <?= $form->field($model, 'comments')->textInput() ?>
-
-    <?php ActiveForm::end(); ?>
-
-    <div class="row">
-        <div class="col-4">
-            <?= Html::dropDownList('id', '', Constant::$colors, ['prompt' => 'Wybierz kolor']) ?>
-        </div>
-        <div class="col-4">
-            <?= Html::dropDownList('id', '', Constant::$vat, ['prompt' => 'Wybierz VAT']) ?>
-        </div>
-        <div class="col-4">
-            <ol>
-                <li>Element</li>
-                <li>Element</li>
-                <li>Element</li>
-            </ol>
-        </div>
-    </div>
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
 
 </div>

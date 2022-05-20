@@ -1,23 +1,25 @@
 <?php
 
 use yii\helpers\Html;
+use yii\web\YiiAsset;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Contractor */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Contractors', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Dane Kontrahentów', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
+YiiAsset::register($this);
 ?>
+
 <div class="contractor-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Edycja kontrahenta', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Usuwanie kontrahenta', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -30,14 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'nip:ntext',
+            'nip',
             'region',
-            'name:ntext',
-            'date_creation',
-            'street:ntext',
-            'house_number:ntext',
-            'apartment_number:ntext',
-            'comments:ntext',
+            'name',
+            'vat',
+            'street',
+            'house_number',
+            'apartment_number',
         ],
     ]) ?>
 

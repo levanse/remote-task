@@ -23,15 +23,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name') ?>
 
-    <?= $form->field($model, 'date_creation') ?>
-
-    <?php // echo $form->field($model, 'street') ?>
+    <?= $form->field($model, 'street') ?>
 
     <?php // echo $form->field($model, 'house_number') ?>
 
     <?php // echo $form->field($model, 'apartment_number') ?>
 
-    <?php // echo $form->field($model, 'comments') ?>
+    <?php // echo $form->field($model, 'vat') ?>
+
+    <?php // echo $form->field($model, 'is_deleted') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
